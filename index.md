@@ -1,6 +1,6 @@
 # HeartTrack: Sodium & Sat Fat — Privacy Policy
 
-**Last updated:** 2026-10-12  
+**Last updated:** 2026-10-17  
 **Official live policy:** [https://ornexgen.github.io/hearttrack-privacy/](https://ornexgen.github.io/hearttrack-privacy/)  
 **Contact:** organizer.next.generation@gmail.com  
 **Application ID:** `com.ornexgen.hearttrack`  
@@ -12,7 +12,7 @@ This privacy policy explains how the Android application **HeartTrack: Sodium & 
 - **100% On-Device Data Storage:** The app operates without developer servers or user accounts. All food logs, companion vitals, custom recipes, daily journal notes, and nutritional targets are stored exclusively on your device in a private local database.
 - **100% Ad-Free & Tracker-Free:** The app contains zero advertisements, zero third-party analytics SDKs, and zero advertising identifiers (no Google Advertising ID / AAID).
 - **Public Nutrient Queries Only:** Food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
-- **Privacy-Preserving Camera:** Camera access is requested solely for on-device barcode recognition. Camera frames are processed entirely in real time on your device; no photos, video feeds, or images are ever saved, stored, or transmitted.
+- **Privacy-Preserving Camera & On-Device OCR:** Camera access and optional photo gallery selection are used strictly on-device for barcode scanning and photographing packaged food nutrition facts labels (OCR text recognition). All image analysis and text extraction occur 100% locally on your device via Google ML Kit; no photos, images, or extracted nutrition data are ever uploaded, stored on developer servers, or transmitted across the internet.
 - **Health Connect Limited Use Compliance:** Optional Android Health Connect synchronization operates strictly on-device between your local health apps. Health data is never sold, never transferred to third parties or developer servers, never used for advertising, and never used to train artificial intelligence (AI) or machine learning (ML) models.
 - **Local-Only Meal Reminders:** Scheduled meal reminders are generated 100% on-device by the Android operating system. No cloud push servers, push tokens, or remote messaging services are used.
 - **Offline Data Portability:** You can export and restore complete offline JSON backups of your health records at any time directly through your device's system share sheet.
@@ -37,11 +37,12 @@ We have no access to this data, operate no cloud databases to receive it, and ne
 
 The application declares and requests only permissions strictly necessary to provide its core features. HeartTrack does not request background location, contacts, phone state, microphone, or external storage permissions.
 
-### 1. Camera (`android.permission.CAMERA`)
-- **Purpose:** Used solely for scanning packaged food barcodes to quickly look up nutritional values (`[FEAT-16]`).
-- **Processing:** Barcode decoding is performed entirely on your device in real time using local machine-vision scanning libraries.
-- **Zero Image Storage or Transmission:** The camera feed is never recorded, never captured into image or video files, and never sent across the internet.
-- **Optional:** Camera permission is requested only when opening the barcode scanner. If you decline camera access, all other app features—including manual food logging and USDA text search—remain fully functional.
+### 1. Camera & Nutrition Label OCR (`android.permission.CAMERA`)
+- **Purpose:** Used for scanning packaged food barcodes to look up nutritional values and capturing photos of physical nutrition facts labels on food packaging for automated on-device text recognition.
+- **On-Device Optical Character Recognition (OCR):** When snapping a nutrition label photo or choosing an existing image from your photo library, text recognition is performed entirely on your device using local Google ML Kit machine vision.
+- **Zero Remote Transmission & Ephemeral Processing:** Captured label images are processed strictly on-device in temporary local cache to extract nutrient numbers, and are immediately discarded. No photos, image frames, or extracted texts are ever sent to developer servers or third parties.
+- **Photo Selection (Zero Extra Permissions):** When selecting an image from your photo library, the app utilizes the native Android Photo Picker, granting temporary access only to the single photo you choose without requesting broad storage or media permissions.
+- **Optional:** Camera and photo access are strictly optional and requested only when using the barcode scanner or nutrition label OCR feature. If declined, all other app features—including manual food logging and USDA text search—remain fully functional.
 
 ### 2. Network Access (`android.permission.INTERNET`)
 - **Purpose:** Used strictly to make outbound HTTPS queries to public food databases when you search for foods or scan barcodes.
@@ -49,7 +50,7 @@ The application declares and requests only permissions strictly necessary to pro
 - **Zero Tracking:** No user profile, device identifier, advertising identifier, or personal health log is ever transmitted. The app does not ping any developer server, crash-reporting endpoint, or remote analytics service.
 
 ### 3. Local Meal Reminders (`android.permission.POST_NOTIFICATIONS`, `android.permission.RECEIVE_BOOT_COMPLETED`, `android.permission.VIBRATE`)
-- **Purpose:** Used to deliver optional, scheduled meal logging reminders at times configured by the user (`[FEAT-22]`).
+- **Purpose:** Used to deliver optional, scheduled meal logging reminders at times configured by the user.
 - **`POST_NOTIFICATIONS`:** Requested on Android 13 (API level 33) and higher to display scheduled local notifications for designated meal times (e.g., Breakfast, Lunch, Dinner).
 - **`RECEIVE_BOOT_COMPLETED`:** Allows the app to restore locally scheduled reminder alarms after your device is restarted, ensuring your chosen reminders continue without requiring you to manually open the app.
 - **`VIBRATE`:** Allows your device to vibrate when a reminder notification fires, according to your system sound and vibration settings.
@@ -59,7 +60,7 @@ The application declares and requests only permissions strictly necessary to pro
 
 ## Android Health Connect Integration & Data Disclosures
 
-HeartTrack provides optional, user-controlled integration with **Android Health Connect** (`androidx.health.connect.client`), allowing you to synchronize dietary intake and vital signs with your device's unified health ecosystem (`[FEAT-21]`).
+HeartTrack provides optional, user-controlled integration with **Android Health Connect** (`androidx.health.connect.client`), allowing you to synchronize dietary intake and vital signs with your device's unified health ecosystem.
 
 ### Health Connect Permissions Requested & Purposes
 When you enable Health Connect sync, HeartTrack may request access to the following permissions:
