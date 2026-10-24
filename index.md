@@ -1,11 +1,11 @@
-# HeartTrack: Sodium & Sat Fat — Privacy Policy
+# DietGauge: Sodium & Sat Fat — Privacy Policy
 
-**Last updated:** 2026-10-17  
-**Official live policy:** [https://ornexgen.github.io/hearttrack-privacy/](https://ornexgen.github.io/hearttrack-privacy/)  
+**Last updated:** 2026-10-24  
+**Official live policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)  
 **Contact:** organizer.next.generation@gmail.com  
-**Application ID:** `com.ornexgen.hearttrack`  
+**Application ID:** `com.ornexgen.dietgauge`  
 
-This privacy policy explains how the Android application **HeartTrack: Sodium & Sat Fat** ("HeartTrack", "the app", "we", or "us") handles user data and protects your privacy.
+This privacy policy explains how the Android application **DietGauge: Sodium & Sat Fat** ("DietGauge", "the app", "we", or "us") handles user data and protects your privacy.
 
 ## Summary
 
@@ -21,7 +21,7 @@ This privacy policy explains how the Android application **HeartTrack: Sodium & 
 
 ## Information Stored on Your Device
 
-HeartTrack stores your health and dietary information strictly on your local device within the application's private SQLite database and app preferences storage:
+DietGauge stores your health and dietary information strictly on your local device within the application's private SQLite database and app preferences storage:
 
 - **Food Intake Logs:** Food item titles, portion sizes (grams or household units), meal categories (Breakfast, Lunch, Dinner, Snack), logging timestamps, full nutrient breakdowns (sodium, saturated fat, calories, and any enabled companion metrics), and optional product barcodes.
 - **Companion Vitals:** Blood pressure records (systolic, diastolic, pulse rate, measurement arm) and morning dry weight logs.
@@ -35,7 +35,7 @@ We have no access to this data, operate no cloud databases to receive it, and ne
 
 ## Device Permissions Disclosures
 
-The application declares and requests only permissions strictly necessary to provide its core features. HeartTrack does not request background location, contacts, phone state, microphone, or external storage permissions.
+The application declares and requests only permissions strictly necessary to provide its core features. DietGauge does not request background location, contacts, phone state, microphone, or external storage permissions.
 
 ### 1. Camera & Nutrition Label OCR (`android.permission.CAMERA`)
 - **Purpose:** Used for scanning packaged food barcodes to look up nutritional values and capturing photos of physical nutrition facts labels on food packaging for automated on-device text recognition.
@@ -55,23 +55,23 @@ The application declares and requests only permissions strictly necessary to pro
 - **`POST_NOTIFICATIONS`:** Requested on Android 13 (API level 33) and higher to display scheduled local notifications for designated meal times (e.g., Breakfast, Lunch, Dinner).
 - **`RECEIVE_BOOT_COMPLETED`:** Allows the app to restore locally scheduled reminder alarms after your device is restarted, ensuring your chosen reminders continue without requiring you to manually open the app.
 - **`VIBRATE`:** Allows your device to vibrate when a reminder notification fires, according to your system sound and vibration settings.
-- **100% Local Scheduling:** All reminders are scheduled entirely on-device using Android's local alarm scheduler (`AlarmManager` / `NotificationManager`). HeartTrack does not use Firebase Cloud Messaging (FCM), push notification servers, device push tokens, or remote tracking. If you disable meal reminders, all scheduled alarms are immediately canceled.
+- **100% Local Scheduling:** All reminders are scheduled entirely on-device using Android's local alarm scheduler (`AlarmManager` / `NotificationManager`). DietGauge does not use Firebase Cloud Messaging (FCM), push notification servers, device push tokens, or remote tracking. If you disable meal reminders, all scheduled alarms are immediately canceled.
 
 ---
 
 ## Android Health Connect Integration & Data Disclosures
 
-HeartTrack provides optional, user-controlled integration with **Android Health Connect** (`androidx.health.connect.client`), allowing you to synchronize dietary intake and vital signs with your device's unified health ecosystem.
+DietGauge provides optional, user-controlled integration with **Android Health Connect** (`androidx.health.connect.client`), allowing you to synchronize dietary intake and vital signs with your device's unified health ecosystem.
 
 ### Health Connect Permissions Requested & Purposes
-When you enable Health Connect sync, HeartTrack may request access to the following permissions:
+When you enable Health Connect sync, DietGauge may request access to the following permissions:
 - **`android.permission.health.READ_NUTRITION`:** Reads dietary nutrient records (calories, sodium, saturated fat, etc.) logged by other authorized apps on your device to prevent duplicate entries and provide comprehensive daily intake totals.
-- **`android.permission.health.WRITE_NUTRITION`:** Writes nutrition data logged in HeartTrack (calories, sodium, saturated fat, trans fat, dietary fiber, added sugars, cholesterol, and potassium) to Health Connect, allowing other compatible health apps to reflect your dietary intake.
+- **`android.permission.health.WRITE_NUTRITION`:** Writes nutrition data logged in DietGauge (calories, sodium, saturated fat, trans fat, dietary fiber, added sugars, cholesterol, and potassium) to Health Connect, allowing other compatible health apps to reflect your dietary intake.
 - **`android.permission.health.READ_BLOOD_PRESSURE`:** Reads resting systolic and diastolic blood pressure measurements and pulse records from Health Connect (e.g., from connected blood pressure monitors or compatible health apps).
 - **`android.permission.health.READ_WEIGHT`:** Reads body weight measurements from Health Connect (e.g., from smart scales or companion fitness apps).
 
 ### Compliance with Google Play Health Connect Policy & Limited Use Requirements
-HeartTrack strictly complies with the **Google Play Health Connect Policy**, including the **Limited Use Requirements**:
+DietGauge strictly complies with the **Google Play Health Connect Policy**, including the **Limited Use Requirements**:
 1. **Never Sold to Third Parties:** We do not sell, rent, lease, or monetize Health Connect data under any circumstances.
 2. **Never Transferred to Third Parties or Developer Servers:** Health Connect data is accessed and processed strictly on your local device. It is never transferred to external servers, cloud databases, or third parties.
 3. **Never Used for Advertising:** Health Connect data is never used or disclosed for personalized, retargeted, interest-based, or generalized advertising or marketing.
@@ -80,8 +80,8 @@ HeartTrack strictly complies with the **Google Play Health Connect Policy**, inc
 
 ### User Control, Transparency, and Revocation
 - **Explicit User Control:** Health Connect integration is entirely optional and disabled by default. No health data is read from or written to Health Connect until you explicitly initiate synchronization.
-- **Permission Management:** You can grant, deny, or revoke individual Health Connect permissions at any time directly in Android system settings (**Settings > Security & privacy > Privacy > Health Connect > App permissions > HeartTrack**).
-- **Data Deletion:** You can view, manage, and delete any data synchronized by HeartTrack directly within the Android Health Connect management interface or by clearing HeartTrack's local app storage.
+- **Permission Management:** You can grant, deny, or revoke individual Health Connect permissions at any time directly in Android system settings (**Settings > Security & privacy > Privacy > Health Connect > App permissions > DietGauge**).
+- **Data Deletion:** You can view, manage, and delete any data synchronized by DietGauge directly within the Android Health Connect management interface or by clearing DietGauge's local app storage.
 
 ---
 
@@ -96,38 +96,38 @@ When you look up nutritional data:
 
 ## Backup & Data Portability (100% Offline)
 
-HeartTrack allows you to export your complete health and nutrition history into a portable JSON backup file and restore it on another device or after reinstalling. Backup files are generated strictly on your device and shared only through user-directed actions via your device's system share sheet (such as saving to local storage, Google Drive, or sending via message/email). We operate no developer servers, accounts, or cloud databases; your backup files are never transmitted to us or any third party.
+DietGauge allows you to export your complete health and nutrition history into a portable JSON backup file and restore it on another device or after reinstalling. Backup files are generated strictly on your device and shared only through user-directed actions via your device's system share sheet (such as saving to local storage, Google Drive, or sending via message/email). We operate no developer servers, accounts, or cloud databases; your backup files are never transmitted to us or any third party.
 
 ---
 
 ## Advertising & Tracking (100% Ad-Free)
 
-The app is completely free, contains zero advertisements, and includes no third-party advertising SDKs, ad networks, or user tracking services. We do not use or collect Google Advertising IDs (AAID), device tracking identifiers, or usage analytics. HeartTrack qualifies for European Union Digital Services Act (EU DSA) **Non-Trader** status.
+The app is completely free, contains zero advertisements, and includes no third-party advertising SDKs, ad networks, or user tracking services. We do not use or collect Google Advertising IDs (AAID), device tracking identifiers, or usage analytics. DietGauge qualifies for European Union Digital Services Act (EU DSA) **Non-Trader** status.
 
 ---
 
 ## Health & Medical Boundaries (Not Medical Advice)
 
-HeartTrack is a passive tracking and awareness tool designed in accordance with FDA General Wellness guidance. It is not a medical device (Software as a Medical Device - SaMD) and does not diagnose, treat, cure, mitigate, prevent, or provide clinical management for hypertension, cardiovascular disease, kidney disease, or any other medical condition. Always follow the personalized guidance of your physician, cardiologist, or registered dietitian regarding your diet, nutrient limits, and medical care.
+DietGauge is a passive tracking and awareness tool designed in accordance with FDA General Wellness guidance. It is not a medical device (Software as a Medical Device - SaMD) and does not diagnose, treat, cure, mitigate, prevent, or provide clinical management for hypertension, cardiovascular disease, kidney disease, or any other medical condition. Always follow the personalized guidance of your physician, cardiologist, or registered dietitian regarding your diet, nutrient limits, and medical care.
 
 ---
 
 ## Children's Privacy
 
-HeartTrack is not directed to children under 13 years of age, and we do not knowingly collect personal information from children.
+DietGauge is not directed to children under 13 years of age, and we do not knowingly collect personal information from children.
 
 ---
 
 ## Changes to this Privacy Policy
 
-If we update this privacy policy, the revised version will be published on this page with an updated "Last updated" date. You can review the authoritative live version at [https://ornexgen.github.io/hearttrack-privacy/](https://ornexgen.github.io/hearttrack-privacy/).
+If we update this privacy policy, the revised version will be published on this page with an updated "Last updated" date. You can review the authoritative live version at [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/).
 
 ---
 
 ## Contact & Developer Information
 
-If you have questions, feedback, or concerns regarding this privacy policy or HeartTrack's data practices, please contact:
+If you have questions, feedback, or concerns regarding this privacy policy or DietGauge's data practices, please contact:
 
-- **Developer:** OrNexGen (Publisher: `com.ornexgen.hearttrack`)
+- **Developer:** OrNexGen (Publisher: `com.ornexgen.dietgauge`)
 - **Email:** organizer.next.generation@gmail.com
-- **Website & Privacy Policy:** [https://ornexgen.github.io/hearttrack-privacy/](https://ornexgen.github.io/hearttrack-privacy/)
+- **Website & Privacy Policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)
