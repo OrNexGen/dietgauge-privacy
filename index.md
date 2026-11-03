@@ -1,6 +1,6 @@
 # DietGauge: Sodium & Sat Fat — Privacy Policy
 
-**Last updated:** 2026-10-26  
+**Last updated:** 2026-11-01  
 **Official live policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)  
 **Contact:** organizer.next.generation@gmail.com  
 **Application ID:** `com.ornexgen.dietgauge`  
@@ -9,7 +9,7 @@ This privacy policy explains how the Android application **DietGauge: Sodium & S
 
 ## Summary
 
-- **100% On-Device Data Storage:** The app operates without developer servers or user accounts. All food logs, companion vitals, custom recipes, daily journal notes, and nutritional targets are stored exclusively on your device in a private local database.
+- **100% On-Device Data Storage:** The app operates without developer servers or user accounts. All food logs, companion vitals, fluid intake logs, medication checklist records, custom recipes, daily journal notes, and nutritional targets are stored exclusively on your device in a private local database.
 - **100% Ad-Free & Tracker-Free:** The app contains zero advertisements, zero third-party analytics SDKs, and zero advertising identifiers (no Google Advertising ID / AAID).
 - **Public Nutrient Queries Only:** Food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
 - **Privacy-Preserving Camera & On-Device ML Vision:** Camera access and optional photo gallery selection are used strictly on-device for barcode scanning, on-device food recognition image classification, and photographing packaged food nutrition facts labels (OCR text recognition). All image analysis, candidate labeling, and text extraction occur 100% locally on your device via Google ML Kit; no photos, images, or visual embeddings are ever uploaded, stored on developer servers, or transmitted across the internet.
@@ -26,11 +26,13 @@ DietGauge stores your health and dietary information strictly on your local devi
 
 - **Food Intake Logs:** Food item titles, portion sizes (grams or household units), meal categories (Breakfast, Lunch, Dinner, Snack), logging timestamps, full nutrient breakdowns (sodium, saturated fat, calories, and any enabled companion metrics), and optional product barcodes.
 - **Companion Vitals:** Blood pressure records (systolic, diastolic, pulse rate, measurement arm) and morning dry weight logs.
-- **Templates & Notes:** User-created combo meal templates and daily dietary context notes.
+- **Fluid Intake Records:** Fluid intake entries, drink types, volume amounts (ml or fl oz), and logging timestamps.
+- **Medication Checklist Records:** Morning and evening medication-taken timestamps and adherence status (stored strictly on-device for patient routine tracking).
+- **Templates & Notes:** User-created combo meal templates, custom food recipes, and daily dietary context notes.
 - **Nutritional Targets & Preferences:** Selected cardiovascular target thresholds, display units, app language, and theme choices.
 - **Disclaimer Acknowledgement:** The accepted disclaimer version and timestamp.
 
-We have no access to this data, operate no cloud databases to receive it, and never sell or transfer it. This data is permanently removed if you clear the app's data in Android system settings or uninstall the application. If you have Android Auto-Backup enabled on your device, the Android operating system may include the app's private files in your personal Google Drive backup under your personal Google account.
+We have no access to this data, operate no cloud databases to receive it, and never sell or transfer it. This data is permanently removed if you clear the app's data in Android system settings or uninstall the application. Android Auto-Backup is explicitly disabled, ensuring your health and dietary data remains strictly on your device unless you manually export a backup.
 
 ---
 
@@ -42,7 +44,7 @@ The application declares and requests only permissions strictly necessary to pro
 - **Purpose:** Used for scanning packaged food barcodes to look up nutritional values, capturing or selecting photos to recognize food items via on-device machine learning classification, and capturing photos of physical nutrition facts labels on food packaging for automated on-device text recognition.
 - **Barcode Network Lookup:** Barcode image recognition occurs entirely on-device to decode the product digits. The resulting numeric code is then queried against public online databases (USDA FoodData Central / Open Food Facts) as disclosed under *Network Access* below; camera images or video feeds are never transmitted.
 - **On-Device Food Recognition:** When taking a photo of a meal or selecting a photo from your gallery in 'Food' scanner mode, image classification is performed entirely on your device using local Google ML Kit machine learning models. The camera strictly classifies food candidate item names (e.g., 'Banana', 'Broccoli') without estimating calories or nutrients from raw pixels. The identified item label is then queried against public food databases only if you choose to search and log it. Captured photos are processed in temporary memory and immediately discarded—no photos are ever uploaded or transmitted.
-- **On-Device Optical Character Recognition (OCR):** When snapping a nutrition label photo or choosing an existing image from your photo library, text recognition is performed entirely on your device using local Google ML Kit machine vision. Unlike barcode lookups, nutrition label text recognition and nutrient parsing occur entirely on-device with zero network requests.
+- **On-Device Optical Character Recognition (OCR):** When snapping a nutrition label photo or choosing an existing image from your photo library, text recognition is performed entirely on your device using local Google ML Kit machine vision (the OCR machine vision model is downloaded automatically by Google Play services). Unlike barcode lookups, nutrition label text recognition and nutrient parsing occur entirely on-device with zero network requests.
 - **Zero Remote Transmission & Ephemeral Processing:** Captured food photos and label images are processed strictly on-device in temporary local cache to extract item candidate labels or nutrient numbers, and are immediately discarded. No photos, image frames, or visual embeddings are ever sent to developer servers or third parties.
 - **Photo Selection (Zero Extra Permissions):** When selecting an image from your photo library, the app utilizes the native Android Photo Picker, granting temporary access only to the single photo you choose without requesting broad storage or media permissions.
 - **Optional:** Camera and photo access are strictly optional and requested only when using the barcode scanner, food recognition, or nutrition label OCR feature. If declined, all other app features—including manual food logging and USDA text search—remain fully functional.
@@ -67,9 +69,8 @@ DietGauge provides optional, user-controlled integration with **Android Health C
 
 ### Health Connect Permissions Requested & Purposes
 When you enable Health Connect sync, DietGauge may request access to the following permissions:
-- **`android.permission.health.READ_NUTRITION`:** Reads dietary nutrient records (calories, sodium, saturated fat, etc.) logged by other authorized apps on your device to prevent duplicate entries and provide comprehensive daily intake totals.
-- **`android.permission.health.WRITE_NUTRITION`:** Writes nutrition data logged in DietGauge (calories, sodium, saturated fat, trans fat, dietary fiber, added sugars, cholesterol, and potassium) to Health Connect, allowing other compatible health apps to reflect your dietary intake.
-- **`android.permission.health.READ_BLOOD_PRESSURE`:** Reads resting systolic and diastolic blood pressure measurements and pulse records from Health Connect (e.g., from connected blood pressure monitors or compatible health apps).
+- **`android.permission.health.WRITE_NUTRITION`:** Writes nutrition data logged in DietGauge (food name, meal type, calories, total carbohydrates, protein, total fat, sodium, saturated fat, trans fat, dietary fiber, added sugars, cholesterol, and potassium) to Health Connect, allowing other compatible health apps to reflect your dietary intake.
+- **`android.permission.health.READ_BLOOD_PRESSURE`:** Reads resting systolic and diastolic blood pressure measurements from Health Connect (e.g., from connected blood pressure monitors or compatible health apps).
 - **`android.permission.health.READ_WEIGHT`:** Reads body weight measurements from Health Connect (e.g., from smart scales or companion fitness apps).
 
 ### Compliance with Google Play Health Connect Policy & Limited Use Requirements
@@ -108,7 +109,13 @@ When you choose to use optional voice search or daily note dictation:
 
 ## Backup & Data Portability (100% Offline)
 
-DietGauge allows you to export your complete health and nutrition history into a portable JSON backup file and restore it on another device or after reinstalling. Backup files are generated strictly on your device and shared only through user-directed actions via your device's system share sheet (such as saving to local storage, Google Drive, or sending via message/email). We operate no developer servers, accounts, or cloud databases; your backup files are never transmitted to us or any third party.
+DietGauge allows you to export your complete health and nutrition history—including food intake logs, companion vitals, fluid intake, medication checklist adherence, custom recipes, daily notes, appointment-prep questions, and customizable settings—into a portable JSON backup file and restore it on another device or after reinstalling. Backup files are generated strictly on your device and shared only through user-directed actions via your device's system share sheet (such as saving to local storage, Google Drive, or sending via message/email). We operate no developer servers, accounts, or cloud databases; your backup files are never transmitted to us or any third party.
+
+---
+
+## Doctor & Caregiver Clinical Report Sharing (100% User-Initiated)
+
+DietGauge includes an optional clinical report export and 1-tap caregiver sharing feature that compiles a formatted summary (clinical PDF or text message) of your food logs, companion vitals, fluid intake, and medication checklist adherence (morning and evening routine completion summary) for a selected 7-day or 14-day window. Appointment-prep questions for your doctor stay on your device, are included in backups, and appear in clinical reports you export. These reports are generated entirely on-device and shared solely through your device's native system share sheet with healthcare providers or trusted caregivers of your choosing. DietGauge operates no cloud sync, intermediary transfer servers, or automated sharing mechanisms; you retain full control over when and with whom your reports are shared.
 
 ---
 
