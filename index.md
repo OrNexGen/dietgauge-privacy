@@ -10,7 +10,7 @@ This privacy policy explains how the Android application **DietGauge: Sodium & S
 ## Summary
 
 - **100% On-Device Data Storage:** The app operates without developer servers or user accounts. All food logs, companion vitals, fluid intake logs, medication checklist records, custom recipes, daily journal notes, and nutritional targets are stored exclusively on your device in a private local database.
-- **100% Ad-Free & Tracker-Free:** The app contains zero advertisements, zero third-party analytics SDKs, and zero advertising identifiers (no Google Advertising ID / AAID).
+- **100% Ad-Free & Tracker-Free:** The app contains zero advertisements, no developer-operated analytics SDKs, and zero advertising identifiers (no Google Advertising ID / AAID). Google ML Kit (used strictly on-device for barcode, OCR, and food classification) may transmit diagnostic and API performance metrics to Google in accordance with Google Play Services disclosures.
 - **Public Nutrient Queries Only:** Food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
 - **Privacy-Preserving Camera & On-Device ML Vision:** Camera access and optional photo gallery selection are used strictly on-device for barcode scanning, on-device food recognition image classification, and photographing packaged food nutrition facts labels (OCR text recognition). All image analysis, candidate labeling, and text extraction occur 100% locally on your device via Google ML Kit; no photos, images, or visual embeddings are ever uploaded, stored on developer servers, or transmitted across the internet.
 - **Privacy-Preserving Voice Input & Dictation:** Optional voice food search and daily note dictation utilize Android's native system speech recognition intent without requesting microphone hardware permissions (`RECORD_AUDIO`). DietGauge never captures, accesses, or records audio streams, and operates zero voice servers; only the resulting transcribed text string is returned directly to the active input field.
@@ -52,7 +52,7 @@ The application declares and requests only permissions strictly necessary to pro
 ### 2. Network Access (`android.permission.INTERNET`)
 - **Purpose:** Used strictly to make outbound HTTPS queries to public food databases when you search for foods or scan barcodes.
 - **Scope:** Connects only to the **U.S. Department of Agriculture (USDA) FoodData Central** REST API and the **Open Food Facts** public database API.
-- **Zero Tracking:** No user profile, device identifier, advertising identifier, or personal health log is ever transmitted. The app does not ping any developer server, crash-reporting endpoint, or remote analytics service.
+- **Zero Tracking:** No user profile, device identifier, advertising identifier, or personal health log is ever transmitted. The app does not ping any developer server, crash-reporting endpoint, or developer-operated analytics service (Google ML Kit on Android may communicate standard diagnostic and API performance metrics directly with Google Play Services).
 
 ### 3. Local Meal Reminders (`android.permission.POST_NOTIFICATIONS`, `android.permission.RECEIVE_BOOT_COMPLETED`, `android.permission.VIBRATE`)
 - **Purpose:** Used to deliver optional, scheduled meal logging reminders at times configured by the user.
@@ -69,7 +69,7 @@ DietGauge provides optional, user-controlled integration with **Android Health C
 
 ### Health Connect Permissions Requested & Purposes
 When you enable Health Connect sync, DietGauge may request access to the following permissions:
-- **`android.permission.health.WRITE_NUTRITION`:** Writes nutrition data logged in DietGauge (food name, meal type, calories, total carbohydrates, protein, total fat, sodium, saturated fat, trans fat, dietary fiber, added sugars, cholesterol, and potassium) to Health Connect, allowing other compatible health apps to reflect your dietary intake.
+- **`android.permission.health.WRITE_NUTRITION`:** Writes nutrition data logged in DietGauge (food name, meal type, calories, total carbohydrates, protein, total fat, sodium, saturated fat, trans fat, dietary fiber, total sugars, cholesterol, and potassium) to Health Connect, allowing other compatible health apps to reflect your dietary intake.
 - **`android.permission.health.READ_BLOOD_PRESSURE`:** Reads resting systolic and diastolic blood pressure measurements from Health Connect (e.g., from connected blood pressure monitors or compatible health apps).
 - **`android.permission.health.READ_WEIGHT`:** Reads body weight measurements from Health Connect (e.g., from smart scales or companion fitness apps).
 
@@ -121,7 +121,7 @@ DietGauge includes an optional clinical report export and 1-tap caregiver sharin
 
 ## Advertising & Tracking (100% Ad-Free)
 
-The app is completely free, contains zero advertisements, and includes no third-party advertising SDKs, ad networks, or user tracking services. We do not use or collect Google Advertising IDs (AAID), device tracking identifiers, or usage analytics. DietGauge qualifies for European Union Digital Services Act (EU DSA) **Non-Trader** status.
+The app is completely free, contains zero advertisements, and includes no third-party advertising SDKs, ad networks, or user tracking services. We do not use or collect Google Advertising IDs (AAID), device tracking identifiers, or developer-operated analytics. (Note: On-device Google ML Kit libraries may collect standard diagnostic and API performance metrics as documented by Google Play Services). DietGauge qualifies for European Union Digital Services Act (EU DSA) **Non-Trader** status.
 
 ---
 
