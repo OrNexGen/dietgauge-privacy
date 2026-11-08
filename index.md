@@ -13,7 +13,7 @@ This privacy policy explains how the Android application **DietGauge: Sodium & S
 - **100% Ad-Free & Tracker-Free:** The app contains zero advertisements, no developer-operated analytics SDKs, and zero advertising identifiers (no Google Advertising ID / AAID). Google ML Kit (used strictly on-device for barcode, OCR, and food classification) may transmit diagnostic and API performance metrics to Google in accordance with Google Play Services disclosures.
 - **Public Nutrient Queries Only:** Food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
 - **Privacy-Preserving Camera & On-Device ML Vision:** Camera access and optional photo gallery selection are used strictly on-device for barcode scanning, on-device food recognition image classification, and photographing packaged food nutrition facts labels (OCR text recognition). All image analysis, candidate labeling, and text extraction occur 100% locally on your device via Google ML Kit; no photos, images, or visual embeddings are ever uploaded, stored on developer servers, or transmitted across the internet.
-- **Privacy-Preserving Voice Input & Dictation:** Optional voice food search and daily note dictation utilize Android's native system speech recognition intent without requesting microphone hardware permissions (`RECORD_AUDIO`). DietGauge never captures, accesses, or records audio streams, and operates zero voice servers; only the resulting transcribed text string is returned directly to the active input field.
+- **Privacy-Preserving Voice Input & Dictation:** Optional voice food search and daily note dictation utilize your device's platform speech recognition with explicit in-app user consent. DietGauge never captures, accesses, streams, or records audio on remote servers; only the resulting transcribed text string is returned directly to the active input field.
 - **Health Connect Limited Use Compliance:** Optional Android Health Connect synchronization operates strictly on-device between your local health apps. Health data is never sold, never transferred to third parties or developer servers, never used for advertising, and never used to train artificial intelligence (AI) or machine learning (ML) models.
 - **Local-Only Meal Reminders:** Scheduled meal reminders are generated 100% on-device by the Android operating system. No cloud push servers, push tokens, or remote messaging services are used.
 - **Offline Data Portability:** You can export and restore complete offline JSON backups of your health records at any time directly through your device's system share sheet.
@@ -38,7 +38,7 @@ We have no access to this data, operate no cloud databases to receive it, and ne
 
 ## Device Permissions Disclosures
 
-The application declares and requests only permissions strictly necessary to provide its core features. DietGauge does not request background location, contacts, phone state, microphone, or external storage permissions.
+The application declares and requests only permissions strictly necessary to provide its core features. DietGauge does not request background location, contacts, phone state, or external storage permissions.
 
 ### 1. Camera, Food Recognition & Nutrition Facts OCR (`android.permission.CAMERA`)
 - **Purpose:** Used for scanning packaged food barcodes to look up nutritional values, capturing or selecting photos to recognize food items via on-device machine learning classification, and capturing photos of physical nutrition facts labels on food packaging for automated on-device text recognition.
@@ -97,12 +97,12 @@ When you look up nutritional data:
 
 ---
 
-## Voice Input & Speech Dictation (Zero Hardware Permissions)
+## Voice Input & Speech Dictation
 
 When you choose to use optional voice search or daily note dictation:
-- **System Intent Delegation:** DietGauge invokes Android's native system speech recognition intent (`RecognizerIntent.ACTION_RECOGNIZE_SPEECH`). Speech recognition is handled entirely by your device's operating system speech provider (such as Google Speech Services) under your device-level Android or Google privacy settings.
-- **Zero Microphone Permissions (`RECORD_AUDIO`):** DietGauge does not declare, request, or hold the `android.permission.RECORD_AUDIO` hardware permission. Because speech recognition is executed by the system dialog, DietGauge never accesses your device's microphone hardware directly.
-- **Zero Audio Capture, Streaming, or Storage:** DietGauge never receives, streams, intercepts, or stores raw audio data or recordings. We operate zero voice-processing servers; DietGauge receives solely the final transcribed text string via Android's standard activity result.
+- **System Intent Delegation:** DietGauge invokes Android's native system speech recognition intent (`RecognizerIntent.ACTION_RECOGNIZE_SPEECH`). Speech recognition is handled by your device's operating system speech provider (such as Google Speech Services) under your device-level Android or Google privacy settings.
+- **Explicit In-App Consent & Disclosure:** Enabling voice input requires explicit user consent via an in-app privacy disclosure dialog before any speech recognition feature is activated.
+- **Zero Audio Capture, Streaming, or Storage:** DietGauge never receives, streams, intercepts, or stores raw audio data or recordings on remote servers. We operate zero voice-processing servers; DietGauge receives solely the final transcribed text string returned by the platform recognizer to the active input field.
 - **Strictly Opt-In:** Voice input shortcuts are disabled by default and can be enabled or disabled at any time in **Settings > Appearance & Display > Voice input & dictation**.
 
 ---
