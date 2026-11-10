@@ -100,7 +100,7 @@ When you look up nutritional data:
 ## Voice Input & Speech Dictation
 
 When you choose to use optional voice search or daily note dictation:
-- **System Intent Delegation:** DietGauge invokes Android's native system speech recognition intent (`RecognizerIntent.ACTION_RECOGNIZE_SPEECH`). Speech recognition is handled by your device's operating system speech provider (such as Google Speech Services) under your device-level Android or Google privacy settings.
+- **System Intent Delegation:** DietGauge invokes Android's native system speech recognition intent (`RecognizerIntent.ACTION_RECOGNIZE_SPEECH`). Voice input uses your device's speech recognition service, which may send audio to its provider (for example Google) under that provider's privacy policy. DietGauge itself does not record or store audio.
 - **Explicit In-App Consent & Disclosure:** Enabling voice input requires explicit user consent via an in-app privacy disclosure dialog before any speech recognition feature is activated.
 - **Zero Audio Capture, Streaming, or Storage:** DietGauge never receives, streams, intercepts, or stores raw audio data or recordings on remote servers. We operate zero voice-processing servers; DietGauge receives solely the final transcribed text string returned by the platform recognizer to the active input field.
 - **Strictly Opt-In:** Voice input shortcuts are disabled by default and can be enabled or disabled at any time in **Settings > Appearance & Display > Voice input & dictation**.
