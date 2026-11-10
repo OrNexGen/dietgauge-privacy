@@ -1,1 +1,1 @@
-# hearttrack-privacy
+# dietgauge-privacy
