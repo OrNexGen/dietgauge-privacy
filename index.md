@@ -137,10 +137,11 @@ If you are located in the European Economic Area (EEA) or the United Kingdom, th
 
 - **Data Controller & Scope:** OrNexGen (`organizer.next.generation@gmail.com`) acts as data controller only for personal data we actually receive or process (such as support emails you send us). Because DietGauge has no user accounts and no developer servers, we never collect, access, or store your on-device food logs, vitals, or health records.
 - **Legal Bases for Processing:**
-  - *Providing user-requested lookups (Art. 6(1)(b) / Art. 6(1)(f)):* When you search foods or scan barcodes, your device sends the search term or barcode directly over HTTPS to USDA FoodData Central and/or Open Food Facts, which receive the query and your IP address solely to return nutrition results.
+  - *Providing user-requested lookups (Art. 6(1)(b) / Art. 6(1)(f)):* When you search foods or scan barcodes, your device sends the search term or barcode directly over HTTPS to USDA FoodData Central and/or Open Food Facts to return nutrition results; those third-party services receive the query and your IP address and handle them under their own privacy policies (as disclosed under *Food Search and Barcode Lookup (USDA FoodData Central & Open Food Facts)* above).
   - *Support inquiries (Art. 6(1)(f)):* If you contact us by email, we process your email address and message solely to reply and retain them only as long as reasonably necessary to resolve your request.
-  - *Explicit opt-in integrations (Art. 6(1)(a)):* Optional features such as Android Health Connect sync and voice input/dictation are disabled by default and operate only after your explicit consent or system permission grant.
-- **Your GDPR Rights (Access, Rectification, Erasure, Portability, Restriction, Objection):**
+  - *Explicit opt-in integrations (Art. 6(1)(a) / Art. 9(2)(a)):* Optional Android Health Connect sync and voice input/dictation are disabled by default and operate strictly on-device at your initiation, consistent with our zero-developer-collection scope above. Insofar as GDPR applies, they rely on your explicit consent under Art. 6(1)(a) and, for Health Connect health data, Art. 9(2)(a) (via your explicit in-app consent and Android system permission grant).
+- **Your GDPR Rights (Access, Rectification, Erasure, Portability, Restriction, Objection, Withdrawal of Consent):**
+  - *Withdrawal of consent (Art. 7(3)):* Where processing relies on consent, you may withdraw it at any time without affecting prior processing—disable voice input in **Settings > Appearance & Display > Voice input & dictation**, or revoke Health Connect permissions in Android system settings (**Settings > Security & privacy > Privacy > Health Connect > App permissions > DietGauge**).
   - *On-device records:* Because your health and nutrition data remains exclusively on your device, you exercise these rights directly—by viewing or editing logs in the app, exporting a portable JSON backup, or clearing app data / uninstalling the app for permanent erasure.
   - *Support emails:* You may email `organizer.next.generation@gmail.com` at any time to request access to, correction of, or deletion of support correspondence you sent us.
   - *Complaints:* You have the right to lodge a complaint with your local EEA or UK data protection supervisory authority.
@@ -150,7 +151,7 @@ If you are located in the European Economic Area (EEA) or the United Kingdom, th
 
 ## Children's Privacy
 
-DietGauge is not directed to children under 13 years of age, and we do not knowingly collect personal information from children.
+DietGauge is not directed to children under 13 (or the minimum digital-consent age required in your country), and we do not knowingly collect personal information from children.
 
 ---
 
