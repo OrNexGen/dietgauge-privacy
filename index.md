@@ -1,6 +1,6 @@
 # DietGauge: Sodium & Sat Fat — Privacy Policy
 
-**Last updated:** 2026-11-01  
+**Last updated:** 2026-11-11  
 **Official live policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)  
 **Contact:** organizer.next.generation@gmail.com  
 **Application ID:** `com.ornexgen.dietgauge`  
@@ -128,6 +128,23 @@ The app is completely free, contains zero advertisements, and includes no third-
 ## Health & Medical Boundaries (Not Medical Advice)
 
 DietGauge is a passive tracking and awareness tool designed in accordance with FDA General Wellness guidance. It is not a medical device (Software as a Medical Device - SaMD) and does not diagnose, treat, cure, mitigate, prevent, or provide clinical management for hypertension, cardiovascular disease, kidney disease, or any other medical condition. Always follow the personalized guidance of your physician, cardiologist, or registered dietitian regarding your diet, nutrient limits, and medical care.
+
+---
+
+## EEA & UK Privacy Rights (GDPR)
+
+If you are located in the European Economic Area (EEA) or the United Kingdom, the General Data Protection Regulation (GDPR / UK GDPR) applies as follows:
+
+- **Data Controller & Scope:** OrNexGen (`organizer.next.generation@gmail.com`) acts as data controller only for personal data we actually receive or process (such as support emails you send us). Because DietGauge has no user accounts and no developer servers, we never collect, access, or store your on-device food logs, vitals, or health records.
+- **Legal Bases for Processing:**
+  - *Providing user-requested lookups (Art. 6(1)(b) / Art. 6(1)(f)):* When you search foods or scan barcodes, your device sends the search term or barcode directly over HTTPS to USDA FoodData Central and/or Open Food Facts, which receive the query and your IP address solely to return nutrition results.
+  - *Support inquiries (Art. 6(1)(f)):* If you contact us by email, we process your email address and message solely to reply and retain them only as long as reasonably necessary to resolve your request.
+  - *Explicit opt-in integrations (Art. 6(1)(a)):* Optional features such as Android Health Connect sync and voice input/dictation are disabled by default and operate only after your explicit consent or system permission grant.
+- **Your GDPR Rights (Access, Rectification, Erasure, Portability, Restriction, Objection):**
+  - *On-device records:* Because your health and nutrition data remains exclusively on your device, you exercise these rights directly—by viewing or editing logs in the app, exporting a portable JSON backup, or clearing app data / uninstalling the app for permanent erasure.
+  - *Support emails:* You may email `organizer.next.generation@gmail.com` at any time to request access to, correction of, or deletion of support correspondence you sent us.
+  - *Complaints:* You have the right to lodge a complaint with your local EEA or UK data protection supervisory authority.
+- **International Data Transfers:** User-initiated queries to USDA FoodData Central (United States) and platform services (such as Google ML Kit diagnostic metrics or your device's speech recognition provider) may involve processing outside the EEA/UK under those providers' respective privacy policies and safeguards.
 
 ---
 
