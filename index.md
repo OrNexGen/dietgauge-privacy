@@ -1,6 +1,6 @@
 # DietGauge: Sodium & Sat Fat — Privacy Policy
 
-**Last updated:** 2026-11-11  
+**Last updated:** 2026-11-16  
 **Official live policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)  
 **Contact:** organizer.next.generation@gmail.com  
 **Application ID:** `com.ornexgen.dietgauge`  
@@ -15,8 +15,8 @@ This privacy policy explains how the Android application **DietGauge: Sodium & S
 - **Privacy-Preserving Camera & On-Device ML Vision:** Camera access and optional photo gallery selection are used strictly on-device for barcode scanning, on-device food recognition image classification, and photographing packaged food nutrition facts labels (OCR text recognition). All image analysis, candidate labeling, and text extraction occur 100% locally on your device via Google ML Kit; no photos, images, or visual embeddings are ever uploaded, stored on developer servers, or transmitted across the internet.
 - **Privacy-Preserving Voice Input & Dictation:** Optional voice food search and daily note dictation utilize your device's platform speech recognition with explicit in-app user consent. DietGauge never captures, accesses, streams, or records audio on remote servers; only the resulting transcribed text string is returned directly to the active input field.
 - **Health Connect Limited Use Compliance:** Optional Android Health Connect synchronization operates strictly on-device between your local health apps. Health data is never sold, never transferred to third parties or developer servers, never used for advertising, and never used to train artificial intelligence (AI) or machine learning (ML) models.
-- **Local-Only Meal Reminders:** Scheduled meal reminders are generated 100% on-device by the Android operating system. No cloud push servers, push tokens, or remote messaging services are used.
-- **Offline Data Portability:** You can export and restore complete offline JSON backups of your health records at any time directly through your device's system share sheet.
+- **Local-Only Reminders:** Scheduled meal, morning vitals, and caregiver export reminders are generated 100% on-device by the Android operating system. No cloud push servers, push tokens, or remote messaging services are used.
+- **Offline Data Portability & Encryption:** You can export and restore complete offline backups (`.json`, compressed `.json.gz`, or optional AES-256-GCM password-encrypted `.dgenc.json`) and clinical reports (with optional AES-256 PDF / CSV-ZIP password protection) at any time by saving directly to device storage or sharing via your device's system share sheet.
 
 ---
 
@@ -54,12 +54,12 @@ The application declares and requests only permissions strictly necessary to pro
 - **Scope:** Connects only to the **U.S. Department of Agriculture (USDA) FoodData Central** REST API and the **Open Food Facts** public database API.
 - **Zero Tracking:** No user profile, device identifier, advertising identifier, or personal health log is ever transmitted. The app does not ping any developer server, crash-reporting endpoint, or developer-operated analytics service (Google ML Kit on Android may communicate standard diagnostic and API performance metrics directly with Google Play Services).
 
-### 3. Local Meal Reminders (`android.permission.POST_NOTIFICATIONS`, `android.permission.RECEIVE_BOOT_COMPLETED`, `android.permission.VIBRATE`)
-- **Purpose:** Used to deliver optional, scheduled meal logging reminders at times configured by the user.
-- **`POST_NOTIFICATIONS`:** Requested on Android 13 (API level 33) and higher to display scheduled local notifications for designated meal times (e.g., Breakfast, Lunch, Dinner).
+### 3. Local Reminders (Meal, Morning Vitals & Caregiver Export) (`android.permission.POST_NOTIFICATIONS`, `android.permission.RECEIVE_BOOT_COMPLETED`, `android.permission.VIBRATE`)
+- **Purpose:** Used to deliver optional, scheduled local reminders at times configured by the user—including meal logging reminders, morning vitals check-in reminders (blood pressure and morning dry weight), and weekly caregiver report export reminders.
+- **`POST_NOTIFICATIONS`:** Requested on Android 13 (API level 33) and higher to display scheduled local notifications for user-configured meal, morning vitals, and caregiver export reminders.
 - **`RECEIVE_BOOT_COMPLETED`:** Allows the app to restore locally scheduled reminder alarms after your device is restarted, ensuring your chosen reminders continue without requiring you to manually open the app.
 - **`VIBRATE`:** Allows your device to vibrate when a reminder notification fires, according to your system sound and vibration settings.
-- **100% Local Scheduling:** All reminders are scheduled entirely on-device using Android's local alarm scheduler (`AlarmManager` / `NotificationManager`). DietGauge does not use Firebase Cloud Messaging (FCM), push notification servers, device push tokens, or remote tracking. If you disable meal reminders, all scheduled alarms are immediately canceled.
+- **100% Local Scheduling:** All reminders are scheduled entirely on-device using Android's local alarm scheduler (`AlarmManager` / `NotificationManager`). DietGauge does not use Firebase Cloud Messaging (FCM), push notification servers, device push tokens, or remote tracking. If you disable reminders, all scheduled alarms are immediately canceled.
 
 ---
 
@@ -109,13 +109,13 @@ When you choose to use optional voice search or daily note dictation:
 
 ## Backup & Data Portability (100% Offline)
 
-DietGauge allows you to export your complete health and nutrition history—including food intake logs, companion vitals, fluid intake, medication checklist adherence, custom recipes, daily notes, appointment-prep questions, and customizable settings—into a portable JSON backup file and restore it on another device or after reinstalling. Backup files are generated strictly on your device and shared only through user-directed actions via your device's system share sheet (such as saving to local storage, Google Drive, or sending via message/email). We operate no developer servers, accounts, or cloud databases; your backup files are never transmitted to us or any third party.
+DietGauge allows you to export your complete health and nutrition history—including food intake logs, companion vitals, fluid intake, medication checklist adherence, custom recipes, daily notes, appointment-prep questions, and customizable settings—into a portable JSON (`.json`), compressed GZip (`.json.gz`), or optional AES-256-GCM password-encrypted (`.dgenc.json`) backup file and restore it on another device or after reinstalling. When password encryption is chosen, key derivation (`PBKDF2-HMAC-SHA256`) and encryption run strictly on your device; DietGauge never stores, transmits, or can recover your backup password. Backup files are saved directly to device storage or shared solely through user-directed actions via your device's system share sheet (such as saving to local storage, Google Drive, or sending via message/email). We operate no developer servers, accounts, or cloud databases; your backup files are never transmitted to us or any third party.
 
 ---
 
 ## Doctor & Caregiver Clinical Report Sharing (100% User-Initiated)
 
-DietGauge includes an optional clinical report export and 1-tap caregiver sharing feature that compiles a formatted summary (clinical PDF or text message) of your food logs, companion vitals, fluid intake, and medication checklist adherence (morning and evening routine completion summary) for a selected 7-day or 14-day window. Appointment-prep questions for your doctor stay on your device, are included in backups, and appear in clinical reports you export. These reports are generated entirely on-device and shared solely through your device's native system share sheet with healthcare providers or trusted caregivers of your choosing. DietGauge operates no cloud sync, intermediary transfer servers, or automated sharing mechanisms; you retain full control over when and with whom your reports are shared.
+DietGauge includes an optional clinical report export and 1-tap caregiver sharing feature that compiles a formatted summary (clinical PDF or CSV spreadsheet) of your food logs, companion vitals, fluid intake, and medication checklist adherence (morning and evening routine completion summary) for a selected 14-day, 30-day, or custom date range up to 365 days (as well as 7-day or 14-day caregiver summaries). You may optionally protect exported reports entirely on-device with a password (AES-256 encrypted PDF or WinZip AES-256 encrypted CSV `.zip` archive); passwords are used ephemerally for that export and are never saved or transmitted. Appointment-prep questions for your doctor stay on your device, are included in backups, and appear in clinical reports you export. These reports are generated entirely on-device and saved directly to device storage or shared solely through your device's native system share sheet with healthcare providers or trusted caregivers of your choosing. DietGauge operates no cloud sync, intermediary transfer servers, or automated sharing mechanisms; you retain full control over when and with whom your reports are shared.
 
 ---
 
@@ -142,7 +142,7 @@ If you are located in the European Economic Area (EEA) or the United Kingdom, th
   - *Explicit opt-in integrations (Art. 6(1)(a) / Art. 9(2)(a)):* Optional Android Health Connect sync and voice input/dictation are disabled by default and operate strictly on-device at your initiation, consistent with our zero-developer-collection scope above. Insofar as GDPR applies, they rely on your explicit consent under Art. 6(1)(a) and, for Health Connect health data, Art. 9(2)(a) (via your explicit in-app consent and Android system permission grant).
 - **Your GDPR Rights (Access, Rectification, Erasure, Portability, Restriction, Objection, Withdrawal of Consent):**
   - *Withdrawal of consent (Art. 7(3)):* Where processing relies on consent, you may withdraw it at any time without affecting prior processing—disable voice input in **Settings > Appearance & Display > Voice input & dictation**, or revoke Health Connect permissions in Android system settings (**Settings > Security & privacy > Privacy > Health Connect > App permissions > DietGauge**).
-  - *On-device records:* Because your health and nutrition data remains exclusively on your device, you exercise these rights directly—by viewing or editing logs in the app, exporting a portable JSON backup, or clearing app data / uninstalling the app for permanent erasure.
+  - *On-device records:* Because your health and nutrition data remains exclusively on your device, you exercise these rights directly—by viewing or editing logs in the app, exporting a portable (plain, compressed, or password-encrypted) backup, or clearing app data / uninstalling the app for permanent erasure.
   - *Support emails:* You may email `organizer.next.generation@gmail.com` at any time to request access to, correction of, or deletion of support correspondence you sent us.
   - *Complaints:* You have the right to lodge a complaint with your local EEA or UK data protection supervisory authority.
 - **International Data Transfers:** User-initiated queries to USDA FoodData Central (United States) and platform services (such as Google ML Kit diagnostic metrics or your device's speech recognition provider) may involve processing outside the EEA/UK under those providers' respective privacy policies and safeguards.
