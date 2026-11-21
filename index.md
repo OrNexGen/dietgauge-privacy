@@ -1,6 +1,6 @@
 # DietGauge: Sodium & Sat Fat — Privacy Policy
 
-**Last updated:** 2026-11-16  
+**Last updated:** 2026-11-21  
 **Official live policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)  
 **Contact:** organizer.next.generation@gmail.com  
 **Application ID:** `com.ornexgen.dietgauge`  
@@ -9,9 +9,9 @@ This privacy policy explains how the Android application **DietGauge: Sodium & S
 
 ## Summary
 
-- **100% On-Device Data Storage:** The app operates without developer servers or user accounts. All food logs, companion vitals, fluid intake logs, medication checklist records, custom recipes, daily journal notes, and nutritional targets are stored exclusively on your device in a private local database.
+- **100% On-Device Data Storage:** The app operates without developer servers or user accounts. All food logs, companion vitals, fluid intake logs, medication checklist records, custom recipes, daily journal notes, and nutritional targets are stored exclusively on your device in private local databases.
 - **100% Ad-Free & Tracker-Free:** The app contains zero advertisements, no developer-operated analytics SDKs, and zero advertising identifiers (no Google Advertising ID / AAID). Google ML Kit (used strictly on-device for barcode, OCR, and food classification) may transmit diagnostic and API performance metrics to Google in accordance with Google Play Services disclosures.
-- **Public Nutrient Queries Only:** Food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
+- **On-Device Offline Catalog & Public Nutrient Queries:** Instant offline food searches and quick nutrient lookups use a bundled, read-only local food catalog (`8,200+` USDA Foundation & SR Legacy foods across 7 languages) stored strictly on your device with zero network requests. Live online food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
 - **Privacy-Preserving Camera & On-Device ML Vision:** Camera access and optional photo gallery selection are used strictly on-device for barcode scanning, on-device food recognition image classification, and photographing packaged food nutrition facts labels (OCR text recognition). All image analysis, candidate labeling, and text extraction occur 100% locally on your device via Google ML Kit; no photos, images, or visual embeddings are ever uploaded, stored on developer servers, or transmitted across the internet.
 - **Privacy-Preserving Voice Input & Dictation:** Optional voice food search and daily note dictation utilize your device's platform speech recognition with explicit in-app user consent. DietGauge never captures, accesses, streams, or records audio on remote servers; only the resulting transcribed text string is returned directly to the active input field.
 - **Health Connect Limited Use Compliance:** Optional Android Health Connect synchronization operates strictly on-device between your local health apps. Health data is never sold, never transferred to third parties or developer servers, never used for advertising, and never used to train artificial intelligence (AI) or machine learning (ML) models.
@@ -22,15 +22,16 @@ This privacy policy explains how the Android application **DietGauge: Sodium & S
 
 ## Information Stored on Your Device
 
-DietGauge stores your health and dietary information strictly on your local device within the application's private SQLite database and app preferences storage:
+DietGauge stores your health and dietary information strictly on your local device within the application's private SQLite databases and app preferences storage:
 
 - **Food Intake Logs:** Food item titles, portion sizes (grams or household units), meal categories (Breakfast, Lunch, Dinner, Snack), logging timestamps, full nutrient breakdowns (sodium, saturated fat, calories, and any enabled companion metrics), and optional product barcodes.
 - **Companion Vitals:** Blood pressure records (systolic, diastolic, pulse rate, measurement arm) and morning dry weight logs.
 - **Fluid Intake Records:** Fluid intake entries, drink types, volume amounts (ml or fl oz), and logging timestamps.
 - **Medication Checklist Records:** Morning and evening medication-taken timestamps and adherence status (stored strictly on-device for patient routine tracking).
-- **Templates & Notes:** User-created combo meal templates, custom food recipes, and daily dietary context notes.
+- **Templates & Notes:** User-created combo meal templates, custom food recipes, appointment-prep questions, and daily dietary context notes.
 - **Nutritional Targets & Preferences:** Selected cardiovascular target thresholds, display units, app language, and theme choices.
 - **Disclaimer Acknowledgement:** The accepted disclaimer version and timestamp.
+- **Bundled Offline Food Catalog:** A read-only local SQLite reference database (`food_catalog.db`) extracted from the app's bundled public USDA Foundation and SR Legacy dataset (`8,200+` foods and multilingual aliases) so common food and quick nutrient lookups work 100% offline.
 
 We have no access to this data, operate no cloud databases to receive it, and never sell or transfer it. This data is permanently removed if you clear the app's data in Android system settings or uninstall the application. Android Auto-Backup is explicitly disabled, ensuring your health and dietary data remains strictly on your device unless you manually export a backup.
 
@@ -47,10 +48,10 @@ The application declares and requests only permissions strictly necessary to pro
 - **On-Device Optical Character Recognition (OCR):** When snapping a nutrition label photo or choosing an existing image from your photo library, text recognition is performed entirely on your device using local Google ML Kit machine vision (the OCR machine vision model is downloaded automatically by Google Play services). Unlike barcode lookups, nutrition label text recognition and nutrient parsing occur entirely on-device with zero network requests.
 - **Zero Remote Transmission & Ephemeral Processing:** Captured food photos and label images are processed strictly on-device in temporary local cache to extract item candidate labels or nutrient numbers, and are immediately discarded. No photos, image frames, or visual embeddings are ever sent to developer servers or third parties.
 - **Photo Selection (Zero Extra Permissions):** When selecting an image from your photo library, the app utilizes the native Android Photo Picker, granting temporary access only to the single photo you choose without requesting broad storage or media permissions.
-- **Optional:** Camera and photo access are strictly optional and requested only when using the barcode scanner, food recognition, or nutrition label OCR feature. If declined, all other app features—including manual food logging and USDA text search—remain fully functional.
+- **Optional:** Camera and photo access are strictly optional and requested only when using the barcode scanner, food recognition, or nutrition label OCR feature. If declined, all other app features—including manual food logging, the bundled offline food catalog, and USDA text search—remain fully functional.
 
 ### 2. Network Access (`android.permission.INTERNET`)
-- **Purpose:** Used strictly to make outbound HTTPS queries to public food databases when you search for foods or scan barcodes.
+- **Purpose:** Used strictly to make outbound HTTPS queries to public food databases when you perform live online food searches or scan barcodes (bundled offline catalog searches and quick nutrient lookups operate completely on-device without network access).
 - **Scope:** Connects only to the **U.S. Department of Agriculture (USDA) FoodData Central** REST API and the **Open Food Facts** public database API.
 - **Zero Tracking:** No user profile, device identifier, advertising identifier, or personal health log is ever transmitted. The app does not ping any developer server, crash-reporting endpoint, or developer-operated analytics service (Google ML Kit on Android may communicate standard diagnostic and API performance metrics directly with Google Play Services).
 
@@ -91,7 +92,8 @@ DietGauge strictly complies with the **Google Play Health Connect Policy**, incl
 ## Food Search and Barcode Lookup (USDA FoodData Central & Open Food Facts)
 
 When you look up nutritional data:
-- **Text Search:** When you search for a food by name, your search query is sent via HTTPS to the **U.S. Department of Agriculture (USDA) FoodData Central** REST API to retrieve public-domain nutritional information.
+- **Bundled Offline Food Catalog & Quick Lookup (100% On-Device):** Instant food searches and quick inline nutrient lookups first query a bundled, read-only local SQLite catalog of `8,200+` USDA Foundation and SR Legacy foods across 7 supported languages directly on your device with zero network requests.
+- **Online Text Search:** When you run a live online food search (or request expanded USDA results beyond the offline catalog), your search query is sent via HTTPS to the **U.S. Department of Agriculture (USDA) FoodData Central** REST API to retrieve public-domain nutritional information.
 - **Barcode Lookup:** When you scan a packaged food barcode, the app queries **USDA FoodData Central** and **Open Food Facts** (an open crowdsourced database made available under the Open Database License, ODbL v1.0) to retrieve product names and reported nutrient profiles.
 - **Zero Personal Identifiers:** No user accounts, personal names, device identifiers, or tracking tokens are sent with search or barcode requests. As with any standard internet request, the third-party service receives the query and can see your device's IP address. For more details on their data handling, refer to the [USDA FoodData Central Privacy Policy](https://www.usda.gov/privacy-policy) and [Open Food Facts Privacy Policy](https://world.openfoodfacts.org/privacy).
 
@@ -137,7 +139,7 @@ If you are located in the European Economic Area (EEA) or the United Kingdom, th
 
 - **Data Controller & Scope:** OrNexGen (`organizer.next.generation@gmail.com`) acts as data controller only for personal data we actually receive or process (such as support emails you send us). Because DietGauge has no user accounts and no developer servers, we never collect, access, or store your on-device food logs, vitals, or health records.
 - **Legal Bases for Processing:**
-  - *Providing user-requested lookups (Art. 6(1)(b) / Art. 6(1)(f)):* When you search foods or scan barcodes, your device sends the search term or barcode directly over HTTPS to USDA FoodData Central and/or Open Food Facts to return nutrition results; those third-party services receive the query and your IP address and handle them under their own privacy policies (as disclosed under *Food Search and Barcode Lookup (USDA FoodData Central & Open Food Facts)* above).
+  - *Providing user-requested lookups (Art. 6(1)(b) / Art. 6(1)(f)):* When you run an online food search or scan a barcode, your device sends the search term or barcode directly over HTTPS to USDA FoodData Central and/or Open Food Facts to return nutrition results; those third-party services receive the query and your IP address and handle them under their own privacy policies (as disclosed under *Food Search and Barcode Lookup (USDA FoodData Central & Open Food Facts)* above). Bundled offline catalog lookups remain 100% on-device.
   - *Support inquiries (Art. 6(1)(f)):* If you contact us by email, we process your email address and message solely to reply and retain them only as long as reasonably necessary to resolve your request.
   - *Explicit opt-in integrations (Art. 6(1)(a) / Art. 9(2)(a)):* Optional Android Health Connect sync and voice input/dictation are disabled by default and operate strictly on-device at your initiation, consistent with our zero-developer-collection scope above. Insofar as GDPR applies, they rely on your explicit consent under Art. 6(1)(a) and, for Health Connect health data, Art. 9(2)(a) (via your explicit in-app consent and Android system permission grant).
 - **Your GDPR Rights (Access, Rectification, Erasure, Portability, Restriction, Objection, Withdrawal of Consent):**
@@ -168,3 +170,10 @@ If you have questions, feedback, or concerns regarding this privacy policy or Di
 - **Developer:** OrNexGen (Publisher: `com.ornexgen.dietgauge`)
 - **Email:** organizer.next.generation@gmail.com
 - **Website & Privacy Policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)
+
+<!-- PRIVACY_SYNC_WATERMARK
+LAST_SYNCED_COMMIT: 9d7e47fd0658ceb8245eab5926c104c134e0fd89
+LAST_SYNCED_DATE: 2026-11-21
+LAST_SYNCED_ITEM: [FEAT-82]
+LIVE_GHPAGES_SYNCED_DATE: 2026-11-16
+-->
