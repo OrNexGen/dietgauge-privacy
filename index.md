@@ -1,6 +1,6 @@
 # DietGauge: Sodium & Sat Fat — Privacy Policy
 
-**Last updated:** 2026-11-23  
+**Last updated:** 2026-11-27  
 **Official live policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)  
 **Contact:** organizer.next.generation@gmail.com  
 **Application ID:** `com.ornexgen.dietgauge`  
@@ -11,7 +11,7 @@ This privacy policy explains how the Android application **DietGauge: Sodium & S
 
 - **100% On-Device Data Storage:** The app operates without developer servers or user accounts. All food logs, companion vitals, fluid intake logs, medication checklist records, custom recipes, daily journal notes, and nutritional targets are stored exclusively on your device in private local databases.
 - **100% Ad-Free & Tracker-Free:** The app contains zero advertisements, no developer-operated analytics SDKs, and zero advertising identifiers (no Google Advertising ID / AAID). Google ML Kit (used strictly on-device for barcode, OCR, and food classification) may transmit diagnostic and API performance metrics to Google in accordance with Google Play Services disclosures.
-- **On-Device Offline Catalog & Public Nutrient Queries:** Instant offline food searches, starter recipe templates (`300` read-only templates), and quick nutrient lookups use a bundled, read-only local food catalog (`8,200+` USDA Foundation & SR Legacy foods across 7 languages) stored strictly on your device with zero network requests. Live online food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
+- **On-Device Offline Catalog & Public Nutrient Queries:** Instant offline food searches, dining-out estimates (`2,000` read-only estimates), starter recipe templates (`2,000` read-only templates), and quick nutrient lookups use a bundled, read-only local food catalog (`8,700+` USDA Foundation, SR Legacy, and FNDDS foods across 7 languages) stored strictly on your device with zero network requests. Live online food searches and barcode lookups query public and open food databases (USDA FoodData Central and Open Food Facts) without transmitting user accounts, names, or personal identifiers.
 - **Privacy-Preserving Camera & On-Device ML Vision:** Camera access and optional photo gallery selection are used strictly on-device for barcode scanning, on-device food recognition image classification, and photographing packaged food nutrition facts labels (OCR text recognition). All image analysis, candidate labeling, and text extraction occur 100% locally on your device via Google ML Kit; no photos, images, or visual embeddings are ever uploaded, stored on developer servers, or transmitted across the internet.
 - **Privacy-Preserving Voice Input & Dictation:** Optional voice food search and daily note dictation utilize your device's platform speech recognition with explicit in-app user consent. DietGauge never captures, accesses, streams, or records audio on remote servers; only the resulting transcribed text string is returned directly to the active input field.
 - **Health Connect Limited Use Compliance:** Optional Android Health Connect synchronization operates strictly on-device between your local health apps. Health data is never sold, never transferred to third parties or developer servers, never used for advertising, and never used to train artificial intelligence (AI) or machine learning (ML) models.
@@ -31,7 +31,7 @@ DietGauge stores your health and dietary information strictly on your local devi
 - **Templates & Notes:** User-created combo meal templates, custom food recipes, appointment-prep questions, and daily dietary context notes.
 - **Nutritional Targets & Preferences:** Selected cardiovascular target thresholds, display units, app language, and theme choices.
 - **Disclaimer Acknowledgement:** The accepted disclaimer version and timestamp.
-- **Bundled Offline Food Catalog:** A read-only local SQLite reference database (`food_catalog.db`) extracted from the app's bundled public USDA Foundation and SR Legacy dataset (`8,200+` foods, multilingual aliases, and `300` starter recipe templates across 7 languages) so common food, recipe template, and quick nutrient lookups work 100% offline.
+- **Bundled Offline Food Catalog:** A read-only local SQLite reference database (`food_catalog.db`) extracted from the app's bundled public USDA Foundation, SR Legacy, and FNDDS dataset (`8,700+` foods, multilingual aliases, `2,000` dining-out estimates, and `2,000` starter recipe templates across 7 languages) so common food, dining-out, recipe template, and quick nutrient lookups work 100% offline.
 
 We have no access to this data, operate no cloud databases to receive it, and never sell or transfer it. This data is permanently removed if you clear the app's data in Android system settings or uninstall the application. Android Auto-Backup is explicitly disabled, ensuring your health and dietary data remains strictly on your device unless you manually export a backup.
 
@@ -92,7 +92,7 @@ DietGauge strictly complies with the **Google Play Health Connect Policy**, incl
 ## Food Search and Barcode Lookup (USDA FoodData Central & Open Food Facts)
 
 When you look up nutritional data:
-- **Bundled Offline Food Catalog & Quick Lookup (100% On-Device):** Instant food searches and quick inline nutrient lookups first query a bundled, read-only local SQLite catalog of `8,200+` USDA Foundation and SR Legacy foods across 7 supported languages directly on your device with zero network requests.
+- **Bundled Offline Food Catalog & Quick Lookup (100% On-Device):** Instant food searches, dining-out estimates, starter recipe templates, and quick inline nutrient lookups first query a bundled, read-only local SQLite catalog (`8,700+` USDA Foundation, SR Legacy, and FNDDS foods, `2,000` dining-out estimates, and `2,000` starter recipe templates across 7 supported languages) directly on your device with zero network requests.
 - **Online Text Search:** When you run a live online food search (or request expanded USDA results beyond the offline catalog), your search query is sent via HTTPS to the **U.S. Department of Agriculture (USDA) FoodData Central** REST API to retrieve public-domain nutritional information.
 - **Barcode Lookup:** When you scan a packaged food barcode, the app queries **USDA FoodData Central** and **Open Food Facts** (an open crowdsourced database made available under the Open Database License, ODbL v1.0) to retrieve product names and reported nutrient profiles.
 - **Zero Personal Identifiers:** No user accounts, personal names, device identifiers, or tracking tokens are sent with search or barcode requests. As with any standard internet request, the third-party service receives the query and can see your device's IP address. For more details on their data handling, refer to the [USDA FoodData Central Privacy Policy](https://www.usda.gov/privacy-policy) and [Open Food Facts Privacy Policy](https://world.openfoodfacts.org/privacy).
@@ -172,8 +172,8 @@ If you have questions, feedback, or concerns regarding this privacy policy or Di
 - **Website & Privacy Policy:** [https://ornexgen.github.io/dietgauge-privacy/](https://ornexgen.github.io/dietgauge-privacy/)
 
 <!-- PRIVACY_SYNC_WATERMARK
-LAST_SYNCED_COMMIT: 420a51f57eaaac5a056eea5d14901fb8483d4f78
-LAST_SYNCED_DATE: 2026-11-23
+LAST_SYNCED_COMMIT: 44db238b5cd16357fcfdddbd07cb16f54c7d0907
+LAST_SYNCED_DATE: 2026-11-27
 LAST_SYNCED_ITEM: [MAINT-46]
 LIVE_GHPAGES_SYNCED_DATE: 2026-11-16
 -->
